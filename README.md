@@ -7,10 +7,10 @@ WordPress plugin: create magic links that log a user in with one click, without 
 
 ## Release zip
 
-Always build the distribution zip from git (honours `.gitattributes` export-ignore):
+Always build the distribution zip from git (honours `.gitattributes` export-ignore). Works from any folder:
 
 ```sh
-git archive --format=zip --prefix=glocalsaino-easy-login-by-magic-link/ -o ~/Desktop/glocalsaino-easy-login-by-magic-link-1.0.0.zip HEAD
+git -C ~/glocalsaino-easy-login-by-magic-link archive --format=zip --prefix=glocalsaino-easy-login-by-magic-link/ -o ~/Desktop/glocalsaino-easy-login-by-magic-link-1.0.0.zip HEAD
 ```
 
 ## Translations
