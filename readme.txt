@@ -1,93 +1,98 @@
-=== WP Login Links ===
-Contributors: rafamm-glocalsaino
-Tags: login, magic link, passwordless, one-click login, authentication
-Requires at least: 5.0
-Tested up to: 6.7
-Stable tag: 1.0.0
+=== GlocalSaino Easy Login by Magic Link ===
+Contributors: glocalsaino, rafammoo
+Tags: magic link, passwordless, login, one-click login, temporary access
+Requires at least: 6.2
+Tested up to: 7.1
 Requires PHP: 7.4
+Stable tag: 1.0.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-Genera enlaces firmados que autentican a un usuario de WordPress automáticamente, sin contraseña.
+Create magic links that log a WordPress user in with one click, without a password. Set expiry, maximum uses and a redirect page per link.
 
 == Description ==
 
-**WP Login Links** permite al administrador crear enlaces de un solo clic que inician sesión en WordPress como un usuario concreto sin necesidad de introducir la contraseña.
+**GlocalSaino Easy Login by Magic Link** lets the site administrator create one-click links that log a visitor in as a specific WordPress user, without typing a password.
 
-El enlace contiene un token aleatorio de 256 bits que nunca expone ni transmite las credenciales del usuario. Al hacer clic, el servidor valida el token, establece la cookie de sesión de WordPress y redirige al usuario a la URL configurada.
+Each link carries a random 256-bit token. It never contains or sends the user's password. When the link is opened, the site checks the token, sets the normal WordPress login cookie and sends the user to the page you chose.
 
-= Casos de uso =
+= Use cases =
 
-* **Onboarding de clientes** — envía a un cliente recién registrado un enlace para que acceda sin fricciones por primera vez.
-* **Soporte técnico** — da acceso temporal a un agente de soporte sin compartir la contraseña real del usuario.
-* **Demos y presentaciones** — acceso directo a un entorno de demostración sin pantalla de login.
-* **Recuperación de acceso** — alternativa a "Olvidé mi contraseña" gestionada desde el panel de administración.
+* **Client onboarding** – send a newly registered client a link so their first visit is frictionless.
+* **Technical support** – give a support agent temporary access without sharing the real password.
+* **Demos and presentations** – open a demo site straight into the right account, no login screen.
+* **Access recovery** – an admin-managed alternative to "Lost your password?".
 
-= Características =
+= Features =
 
-* **Token de 256 bits** — generado con `random_bytes()`, computacionalmente infalsificable.
-* **Caducidad configurable** — 1 hora, 1 día, 7 días, 30 días o sin caducidad.
-* **Límite de usos** — 1 uso (por defecto), 5, 10 o ilimitado.
-* **URL de destino por enlace** — redirige al usuario a cualquier página del sitio tras el login.
-* **Revocación inmediata** — cualquier enlace puede anularse desde el panel de administración.
-* **Copia al portapapeles** — botón de copia en un clic para cada enlace generado.
-* **Sin dependencias externas** — el plugin no carga ninguna librería ni recurso externo.
-* **Sin tablas adicionales** — los tokens se almacenan en la tabla de opciones de WordPress.
+* **256-bit tokens** generated with `random_bytes()`.
+* **Expiry** – 1 hour, 1 day, 7 days, 30 days or never.
+* **Usage limit** – 1 use (default), 5, 10 or unlimited.
+* **Redirect page per link** – any page of your site.
+* **Instant revocation** of any link from the admin page.
+* **Copy to clipboard** in one click.
+* **Status at a glance** – active, expired or used up, with a use counter.
+* **No external services, no extra database tables** – links are stored in a single WordPress option, removed when the plugin is deleted.
+* Developer hook `glocalsaino_magic_link_logged_in` fires after every magic-link login.
 
-= Uso =
+Everything is free: there are no paid tiers, limits or license keys.
 
-1. Ve a **Ajustes → WP Login Links**.
-2. Selecciona el usuario, configura la caducidad y el número de usos.
-3. Haz clic en **Generar login link** y copia el enlace generado.
-4. Envía el enlace al usuario. Al hacer clic quedará autenticado en el sitio.
+= How to use =
 
-= Requisitos =
-
-* WordPress 5.0 o superior.
-* PHP 7.4 o superior.
+1. Go to **Settings → Easy Login by Magic Link**.
+2. Pick the user, the expiry and the maximum number of uses.
+3. Click **Create magic link** and copy the link from the list.
+4. Send the link to the user. Opening it logs them in.
 
 == Installation ==
 
-1. Sube la carpeta `wp-login-links` a `/wp-content/plugins/`.
-2. Activa el plugin desde **Plugins → Plugins instalados**.
-3. Ve a **Ajustes → WP Login Links** para empezar a generar enlaces.
+1. Upload the `glocalsaino-easy-login-by-magic-link` folder to `/wp-content/plugins/`, or install the plugin from **Plugins → Add New**.
+2. Activate it.
+3. Go to **Settings → Easy Login by Magic Link** to create your first link.
 
 == Frequently Asked Questions ==
 
-= ¿Es seguro? ¿El enlace contiene la contraseña del usuario? =
+= Is it safe? Does the link contain the user's password? =
 
-No. El enlace contiene únicamente un token aleatorio de 256 bits (`bin2hex(random_bytes(32))`). La contraseña real del usuario nunca se incluye ni se transmite. El token es un puntero opaco que el servidor canjea por una sesión al recibir la petición.
+No. The link only contains a random 256-bit token (64 hexadecimal characters). The password is never included or sent. The token is an opaque key that the site exchanges for a login session. Anyone holding an active link can log in as that user, so treat links like passwords: use short expiry times and a single use whenever possible, and revoke links you no longer need.
 
-= ¿Qué ocurre si el enlace caduca o alcanza el límite de usos? =
+= What happens when a link expires or reaches its usage limit? =
 
-El token deja de ser válido y el visitante llega al sitio sin iniciar sesión. El enlace no da ningún mensaje de error propio; el visitante simplemente verá la página de inicio del sitio como usuario no autenticado.
+The token stops working and the visitor simply arrives at the site without being logged in.
 
-= ¿Puedo generar enlaces para cualquier usuario, incluidos administradores? =
+= Some links are "used" before the person opens them. Why? =
 
-Sí. El selector muestra todos los usuarios del sitio. Ten en cuenta que un enlace de login para un usuario administrador otorga acceso completo al panel de WordPress, por lo que debes gestionar estos enlaces con especial cuidado.
+Some email security filters open every link in incoming messages to scan them, which counts as a use. If that happens, send links with more than one use, or share them through a channel that does not pre-open links.
 
-= ¿El plugin funciona con HTTPS y HTTP? =
+= Can I create links for any user, including administrators? =
 
-Sí. La cookie de sesión de WordPress que establece el plugin respeta la configuración del sitio. Si el sitio usa HTTPS, la cookie se marca como `Secure` automáticamente.
+Yes. The dropdown lists every user of the site. A link for an administrator gives full access to the dashboard, so handle those links with special care.
 
-= ¿Cuántos enlaces puedo crear? =
+= Can the link redirect to another website? =
 
-No hay límite en el número de enlaces activos. Cada enlace se almacena como una entrada en la opción `wpll_login_links` de la base de datos de WordPress.
+No. For safety, the redirect URL must point to a page of your own site.
 
-== Privacy Policy ==
+= How many links can I create? =
 
-WP Login Links no recopila, almacena ni transmite datos personales a terceros.
+There is no limit.
 
-* Los tokens generados se almacenan en la base de datos local de WordPress junto al ID del usuario vinculado, la fecha de creación y el contador de usos.
-* No se realizan conexiones externas de ningún tipo.
-* Al revocar un enlace, su token se elimina de la base de datos de forma permanente.
+= What happens to my links if I delete the plugin? =
+
+All stored links are deleted together with the plugin.
+
+== Privacy ==
+
+This plugin does not send any data to third parties and makes no external connections.
+
+* For each link it stores, in your own WordPress database, the token, the linked user ID, an optional label and redirect URL, the creation and expiry dates, and a use counter with the time of the last use.
+* Revoking a link deletes it permanently. Deleting the plugin deletes all links.
 
 == Changelog ==
 
 = 1.0.0 =
-* Versión inicial. Generación, listado y revocación de login links con caducidad y límite de usos configurables.
+* First public release: create, list, copy and revoke magic login links with expiry, usage limit and redirect page.
 
 == Upgrade Notice ==
 
 = 1.0.0 =
-Versión inicial.
+First public release.

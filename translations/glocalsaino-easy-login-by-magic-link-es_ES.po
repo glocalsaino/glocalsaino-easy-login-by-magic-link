@@ -1,0 +1,203 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: GlocalSaino Easy Login by Magic Link 1.0.0\n"
+"Language: es_ES\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Domain: glocalsaino-easy-login-by-magic-link\n"
+
+#. Plugin Name of the plugin
+#: glocalsaino-easy-login-by-magic-link.php
+msgid "GlocalSaino Easy Login by Magic Link"
+msgstr "GlocalSaino Easy Login by Magic Link"
+
+#. Plugin URI of the plugin
+#: glocalsaino-easy-login-by-magic-link.php
+msgid "https://glocalsaino.com/easyloginbymagiclink/"
+msgstr "https://glocalsaino.com/easyloginbymagiclink/"
+
+#. Description of the plugin
+#: glocalsaino-easy-login-by-magic-link.php
+msgid "Create secure magic links that log a WordPress user in with one click, no password needed. Set expiry, maximum uses and a redirect URL for each link."
+msgstr "Crea enlaces mágicos seguros que inician sesión en WordPress como un usuario con un solo clic, sin contraseña. Configura caducidad, usos máximos y URL de destino por enlace."
+
+#. Author of the plugin
+#: glocalsaino-easy-login-by-magic-link.php
+msgid "Glocal Saino"
+msgstr "Glocal Saino"
+
+#. Author URI of the plugin
+#: glocalsaino-easy-login-by-magic-link.php
+msgid "https://glocalsaino.com/"
+msgstr "https://glocalsaino.com/"
+
+#: includes/class-gselml-admin.php:45
+#: includes/class-gselml-admin.php:46
+#: includes/class-gselml-admin.php:123
+msgid "Easy Login by Magic Link"
+msgstr "Acceso fácil con enlace mágico"
+
+#: includes/class-gselml-admin.php:62
+msgid "Settings"
+msgstr "Ajustes"
+
+#: includes/class-gselml-admin.php:93
+msgid "Copied"
+msgstr "Copiado"
+
+#: includes/class-gselml-admin.php:94
+msgid "Revoke this link? It will stop working immediately."
+msgstr "¿Revocar este enlace? Dejará de funcionar inmediatamente."
+
+#: includes/class-gselml-admin.php:114
+msgid "Magic link created. Copy it from the list below."
+msgstr "Enlace mágico creado. Cópialo de la lista inferior."
+
+#: includes/class-gselml-admin.php:115
+msgid "Magic link revoked."
+msgstr "Enlace mágico revocado."
+
+#: includes/class-gselml-admin.php:116
+msgid "The selected user does not exist."
+msgstr "El usuario seleccionado no existe."
+
+#: includes/class-gselml-admin.php:117
+msgid "The redirect URL must point to this site."
+msgstr "La URL de redirección debe apuntar a este sitio."
+
+#: includes/class-gselml-admin.php:124
+msgid "Create links that log a WordPress user in with one click, without a password. Each link holds a random 256-bit token; it never contains or reveals the user's credentials."
+msgstr "Crea enlaces que inician sesión en WordPress como un usuario con un solo clic, sin contraseña. Cada enlace lleva un token aleatorio de 256 bits; nunca contiene ni revela las credenciales del usuario."
+
+#: includes/class-gselml-admin.php:131
+msgid "Create a link"
+msgstr "Crear enlace"
+
+#: includes/class-gselml-admin.php:137
+#: includes/class-gselml-admin.php:194
+msgid "User"
+msgstr "Usuario"
+
+#: includes/class-gselml-admin.php:144
+msgid "A link for an administrator gives full access to the dashboard: share it with care."
+msgstr "Un enlace para un administrador da acceso completo al escritorio: compártelo con cuidado."
+
+#: includes/class-gselml-admin.php:148
+msgid "Label (optional)"
+msgstr "Etiqueta (opcional)"
+
+#: includes/class-gselml-admin.php:150
+msgid "e.g. Support access, May"
+msgstr "Ej. Acceso soporte mayo"
+
+#: includes/class-gselml-admin.php:154
+msgid "Redirect to (optional)"
+msgstr "Redirigir a (opcional)"
+
+#: includes/class-gselml-admin.php:157
+msgid "Page of this site the user lands on after logging in. Default: the home page."
+msgstr "Página de este sitio a la que llega el usuario tras iniciar sesión. Por defecto: la portada."
+
+#: includes/class-gselml-admin.php:161
+msgid "Expires after"
+msgstr "Caducidad"
+
+#: includes/class-gselml-admin.php:164
+msgid "1 hour"
+msgstr "1 hora"
+
+#: includes/class-gselml-admin.php:165
+msgid "1 day"
+msgstr "1 día"
+
+#: includes/class-gselml-admin.php:166
+msgid "7 days"
+msgstr "7 días"
+
+#: includes/class-gselml-admin.php:167
+msgid "30 days"
+msgstr "30 días"
+
+#: includes/class-gselml-admin.php:168
+#: includes/class-gselml-admin.php:219
+msgid "Never"
+msgstr "Nunca"
+
+#: includes/class-gselml-admin.php:173
+msgid "Maximum uses"
+msgstr "Usos máximos"
+
+#: includes/class-gselml-admin.php:176
+msgid "1 use"
+msgstr "1 uso"
+
+#: includes/class-gselml-admin.php:177
+msgid "5 uses"
+msgstr "5 usos"
+
+#: includes/class-gselml-admin.php:178
+msgid "10 uses"
+msgstr "10 usos"
+
+#: includes/class-gselml-admin.php:179
+msgid "Unlimited"
+msgstr "Ilimitado"
+
+#: includes/class-gselml-admin.php:184
+msgid "Create magic link"
+msgstr "Crear enlace mágico"
+
+#: includes/class-gselml-admin.php:190
+msgid "Existing links"
+msgstr "Enlaces existentes"
+
+#: includes/class-gselml-admin.php:195
+msgid "Label"
+msgstr "Etiqueta"
+
+#: includes/class-gselml-admin.php:196
+msgid "Link"
+msgstr "Enlace"
+
+#: includes/class-gselml-admin.php:197
+msgid "Expires"
+msgstr "Caduca"
+
+#: includes/class-gselml-admin.php:198
+msgid "Uses"
+msgstr "Usos"
+
+#: includes/class-gselml-admin.php:199
+msgid "Status"
+msgstr "Estado"
+
+#: includes/class-gselml-admin.php:200
+msgid "Actions"
+msgstr "Acciones"
+
+#: includes/class-gselml-admin.php:217
+msgid "Copy"
+msgstr "Copiar"
+
+#: includes/class-gselml-admin.php:223
+msgid "Expired"
+msgstr "Caducado"
+
+#: includes/class-gselml-admin.php:225
+msgid "Used up"
+msgstr "Agotado"
+
+#: includes/class-gselml-admin.php:227
+msgid "Active"
+msgstr "Activo"
+
+#: includes/class-gselml-admin.php:235
+msgid "Revoke"
+msgstr "Revocar"
+
+#: includes/class-gselml-core.php:101
+#: includes/class-gselml-core.php:152
+msgid "You are not allowed to do this."
+msgstr "No tienes permisos para realizar esta acción."
