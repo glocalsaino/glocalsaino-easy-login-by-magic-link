@@ -76,7 +76,7 @@ msgid "Create a link"
 msgstr "Crear enlace"
 
 #: includes/class-gselml-admin.php:137
-#: includes/class-gselml-admin.php:194
+#: includes/class-gselml-admin.php:204
 msgid "User"
 msgstr "Usuario"
 
@@ -121,7 +121,7 @@ msgid "30 days"
 msgstr "30 días"
 
 #: includes/class-gselml-admin.php:168
-#: includes/class-gselml-admin.php:219
+#: includes/class-gselml-admin.php:230
 msgid "Never"
 msgstr "Nunca"
 
@@ -146,58 +146,104 @@ msgid "Unlimited"
 msgstr "Ilimitado"
 
 #: includes/class-gselml-admin.php:184
+msgid "Login button page"
+msgstr "Página con botón de acceso"
+
+#: includes/class-gselml-admin.php:188
+msgid "Show a page with a \"Log in\" button before logging the user in (recommended)"
+msgstr "Mostrar una página con un botón «Iniciar sesión» antes de iniciar la sesión (recomendado)"
+
+#: includes/class-gselml-admin.php:190
+msgid "Email security filters often open links automatically to scan them. With this page, only a real click on the button logs in and counts as a use. Untick it for a direct one-click login."
+msgstr "Los filtros de seguridad del correo suelen abrir los enlaces automáticamente para analizarlos. Con esta página, solo un clic real en el botón inicia la sesión y cuenta como uso. Desmárcalo para un acceso directo en un clic."
+
+#: includes/class-gselml-admin.php:194
 msgid "Create magic link"
 msgstr "Crear enlace mágico"
 
-#: includes/class-gselml-admin.php:190
+#: includes/class-gselml-admin.php:200
 msgid "Existing links"
 msgstr "Enlaces existentes"
 
-#: includes/class-gselml-admin.php:195
+#: includes/class-gselml-admin.php:205
 msgid "Label"
 msgstr "Etiqueta"
 
-#: includes/class-gselml-admin.php:196
+#: includes/class-gselml-admin.php:206
 msgid "Link"
 msgstr "Enlace"
 
-#: includes/class-gselml-admin.php:197
+#: includes/class-gselml-admin.php:207
 msgid "Expires"
 msgstr "Caduca"
 
-#: includes/class-gselml-admin.php:198
+#: includes/class-gselml-admin.php:208
 msgid "Uses"
 msgstr "Usos"
 
-#: includes/class-gselml-admin.php:199
+#: includes/class-gselml-admin.php:209
+msgid "Login"
+msgstr "Acceso"
+
+#: includes/class-gselml-admin.php:210
 msgid "Status"
 msgstr "Estado"
 
-#: includes/class-gselml-admin.php:200
+#: includes/class-gselml-admin.php:211
 msgid "Actions"
 msgstr "Acciones"
 
-#: includes/class-gselml-admin.php:217
+#: includes/class-gselml-admin.php:228
 msgid "Copy"
 msgstr "Copiar"
 
-#: includes/class-gselml-admin.php:223
+#: includes/class-gselml-admin.php:232
+msgid "Button page"
+msgstr "Con botón"
+
+#: includes/class-gselml-admin.php:232
+msgid "Direct"
+msgstr "Directo"
+
+#: includes/class-gselml-admin.php:235
 msgid "Expired"
 msgstr "Caducado"
 
-#: includes/class-gselml-admin.php:225
+#: includes/class-gselml-admin.php:237
 msgid "Used up"
 msgstr "Agotado"
 
-#: includes/class-gselml-admin.php:227
+#: includes/class-gselml-admin.php:239
 msgid "Active"
 msgstr "Activo"
 
-#: includes/class-gselml-admin.php:235
+#: includes/class-gselml-admin.php:247
 msgid "Revoke"
 msgstr "Revocar"
 
-#: includes/class-gselml-core.php:101
-#: includes/class-gselml-core.php:152
+#: includes/class-gselml-core.php:184
+msgid "Log in"
+msgstr "Iniciar sesión"
+
+#. translators: %s: user display name.
+#: includes/class-gselml-core.php:189
+#, php-format
+msgid "Log in as %s by clicking the button below."
+msgstr "Inicia sesión como %s pulsando el botón de abajo."
+
+#: includes/class-gselml-core.php:205
+msgid "Login link not valid"
+msgstr "Enlace de acceso no válido"
+
+#: includes/class-gselml-core.php:208
+msgid "This login link has expired, has already been used or has been revoked. Ask the site administrator for a new one."
+msgstr "Este enlace de acceso ha caducado, ya se ha usado o ha sido revocado. Pide uno nuevo al administrador del sitio."
+
+#: includes/class-gselml-core.php:209
+msgid "Go to the login page"
+msgstr "Ir a la página de acceso"
+
+#: includes/class-gselml-core.php:219
+#: includes/class-gselml-core.php:272
 msgid "You are not allowed to do this."
 msgstr "No tienes permisos para realizar esta acción."

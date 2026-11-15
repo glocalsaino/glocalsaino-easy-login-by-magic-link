@@ -180,6 +180,16 @@ class GSELML_Admin {
 								</select>
 							</td>
 						</tr>
+						<tr>
+							<th scope="row"><?php esc_html_e( 'Login button page', 'glocalsaino-easy-login-by-magic-link' ); ?></th>
+							<td>
+								<label for="gselml_confirm">
+									<input type="checkbox" id="gselml_confirm" name="confirm" value="1" checked />
+									<?php esc_html_e( 'Show a page with a "Log in" button before logging the user in (recommended)', 'glocalsaino-easy-login-by-magic-link' ); ?>
+								</label>
+								<p class="description"><?php esc_html_e( 'Email security filters often open links automatically to scan them. With this page, only a real click on the button logs in and counts as a use. Untick it for a direct one-click login.', 'glocalsaino-easy-login-by-magic-link' ); ?></p>
+							</td>
+						</tr>
 					</table>
 					<?php submit_button( __( 'Create magic link', 'glocalsaino-easy-login-by-magic-link' ) ); ?>
 				</form>
@@ -196,6 +206,7 @@ class GSELML_Admin {
 								<th><?php esc_html_e( 'Link', 'glocalsaino-easy-login-by-magic-link' ); ?></th>
 								<th><?php esc_html_e( 'Expires', 'glocalsaino-easy-login-by-magic-link' ); ?></th>
 								<th><?php esc_html_e( 'Uses', 'glocalsaino-easy-login-by-magic-link' ); ?></th>
+								<th><?php esc_html_e( 'Login', 'glocalsaino-easy-login-by-magic-link' ); ?></th>
 								<th><?php esc_html_e( 'Status', 'glocalsaino-easy-login-by-magic-link' ); ?></th>
 								<th><?php esc_html_e( 'Actions', 'glocalsaino-easy-login-by-magic-link' ); ?></th>
 							</tr>
@@ -218,6 +229,7 @@ class GSELML_Admin {
 									</td>
 									<td><?php echo ! empty( $gselml_link['expires'] ) ? esc_html( wp_date( $date_format, (int) $gselml_link['expires'] ) ) : esc_html__( 'Never', 'glocalsaino-easy-login-by-magic-link' ); ?></td>
 									<td><?php echo esc_html( $gselml_uses ); ?></td>
+									<td><?php echo $this->core->needs_confirmation( $gselml_link ) ? esc_html__( 'Button page', 'glocalsaino-easy-login-by-magic-link' ) : esc_html__( 'Direct', 'glocalsaino-easy-login-by-magic-link' ); ?></td>
 									<td>
 										<?php if ( $this->core->is_expired( $gselml_link ) ) : ?>
 											<span class="gselml-status gselml-status--expired"><?php esc_html_e( 'Expired', 'glocalsaino-easy-login-by-magic-link' ); ?></span>

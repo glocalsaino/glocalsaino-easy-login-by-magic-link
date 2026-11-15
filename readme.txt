@@ -14,7 +14,9 @@ Create magic links that log a WordPress user in with one click, without a passwo
 
 **GlocalSaino Easy Login by Magic Link** lets the site administrator create one-click links that log a visitor in as a specific WordPress user, without typing a password.
 
-Each link carries a random 256-bit token. It never contains or sends the user's password. When the link is opened, the site checks the token, sets the normal WordPress login cookie and sends the user to the page you chose.
+Each link carries a random 256-bit token. It never contains or sends the user's password. When the link is opened, the site checks the token and shows a simple page with a **Log in** button; one click sets the normal WordPress login cookie and sends the user to the page you chose.
+
+That button page is on by default because many email security filters open every link in a message to scan it. Without it, those automatic visits could use up a single-use link before the person even sees it. You can turn it off per link for a direct one-click login.
 
 = Use cases =
 
@@ -29,6 +31,8 @@ Each link carries a random 256-bit token. It never contains or sends the user's 
 * **Expiry** – 1 hour, 1 day, 7 days, 30 days or never.
 * **Usage limit** – 1 use (default), 5, 10 or unlimited.
 * **Redirect page per link** – any page of your site.
+* **Scanner-proof "Log in" button page** (on by default, optional per link) – opening the link never uses it up, only the click does.
+* **Clear message for expired, used-up or revoked links**, with a link to the normal login page.
 * **Instant revocation** of any link from the admin page.
 * **Copy to clipboard** in one click.
 * **Status at a glance** – active, expired or used up, with a use counter.
@@ -42,7 +46,7 @@ Everything is free: there are no paid tiers, limits or license keys.
 1. Go to **Settings → Easy Login by Magic Link**.
 2. Pick the user, the expiry and the maximum number of uses.
 3. Click **Create magic link** and copy the link from the list.
-4. Send the link to the user. Opening it logs them in.
+4. Send the link to the user. Opening it shows a **Log in** button (or logs them in straight away if you turned that page off).
 
 == Installation ==
 
@@ -58,11 +62,11 @@ No. The link only contains a random 256-bit token (64 hexadecimal characters). T
 
 = What happens when a link expires or reaches its usage limit? =
 
-The token stops working and the visitor simply arrives at the site without being logged in.
+The token stops working. The visitor sees a short message saying the link is no longer valid, with a link to the normal login page.
 
-= Some links are "used" before the person opens them. Why? =
+= Can email security scanners use up my links? =
 
-Some email security filters open every link in incoming messages to scan them, which counts as a use. If that happens, send links with more than one use, or share them through a channel that does not pre-open links.
+Some email security filters open every link in incoming messages to scan them. With the "Log in" button page (on by default) those automatic visits do not count: only a click on the button logs in and uses the link. If you turned that page off for a link, scanners can use it up; create a new link with the page on.
 
 = Can I create links for any user, including administrators? =
 
@@ -90,7 +94,7 @@ This plugin does not send any data to third parties and makes no external connec
 == Changelog ==
 
 = 1.0.0 =
-* First public release: create, list, copy and revoke magic login links with expiry, usage limit and redirect page.
+* First public release: create, list, copy and revoke magic login links with expiry, usage limit, redirect page and an optional scanner-proof "Log in" button page.
 
 == Upgrade Notice ==
 
