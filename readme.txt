@@ -43,7 +43,7 @@ Everything is free: there are no paid tiers, limits or license keys.
 
 = How to use =
 
-1. Go to **Settings → Easy Login by Magic Link**.
+1. Go to the **Easy Login** menu in the dashboard.
 2. Pick the user, the expiry and the maximum number of uses.
 3. Click **Create magic link** and copy the link from the list.
 4. Send the link to the user. Opening it shows a **Log in** button (or logs them in straight away if you turned that page off).
@@ -52,7 +52,7 @@ Everything is free: there are no paid tiers, limits or license keys.
 
 1. Upload the `glocalsaino-easy-login-by-magic-link` folder to `/wp-content/plugins/`, or install the plugin from **Plugins → Add New**.
 2. Activate it.
-3. Go to **Settings → Easy Login by Magic Link** to create your first link.
+3. Go to the **Easy Login** menu in the dashboard to create your first link.
 
 == Frequently Asked Questions ==
 

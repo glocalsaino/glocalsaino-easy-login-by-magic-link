@@ -1,6 +1,6 @@
 <?php
 /**
- * Admin screen: Settings → Easy Login by Magic Link.
+ * Admin screen: top-level "Easy Login" menu.
  *
  * @package GlocalSaino_Easy_Login_By_Magic_Link
  */
@@ -22,7 +22,7 @@ class GSELML_Admin {
 	private $core;
 
 	/**
-	 * Hook suffix returned by add_options_page().
+	 * Hook suffix returned by add_menu_page().
 	 *
 	 * @var string
 	 */
@@ -38,15 +38,17 @@ class GSELML_Admin {
 	}
 
 	/**
-	 * Registers the Settings submenu.
+	 * Registers the top-level admin menu.
 	 */
 	public function register_menu() {
-		$this->hook = (string) add_options_page(
+		$this->hook = (string) add_menu_page(
 			__( 'Easy Login by Magic Link', 'glocalsaino-easy-login-by-magic-link' ),
-			__( 'Easy Login by Magic Link', 'glocalsaino-easy-login-by-magic-link' ),
+			__( 'Easy Login', 'glocalsaino-easy-login-by-magic-link' ),
 			'manage_options',
 			GSELML_Core::PAGE_SLUG,
-			array( $this, 'render_page' )
+			array( $this, 'render_page' ),
+			'dashicons-admin-network',
+			71
 		);
 	}
 

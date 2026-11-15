@@ -25,7 +25,7 @@ class GSELML_Core {
 	const QUERY_VAR = 'glocalsaino_magic_link';
 
 	/**
-	 * Admin page slug (Settings submenu).
+	 * Admin page slug (top-level menu).
 	 */
 	const PAGE_SLUG = 'glocalsaino-easy-login-by-magic-link';
 
@@ -354,7 +354,7 @@ class GSELML_Core {
 	 * @return string
 	 */
 	public function admin_page_url() {
-		return admin_url( 'options-general.php?page=' . self::PAGE_SLUG );
+		return admin_url( 'admin.php?page=' . self::PAGE_SLUG );
 	}
 
 	/**

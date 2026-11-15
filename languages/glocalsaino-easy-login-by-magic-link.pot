@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-11-15T10:15:22+00:00\n"
+"POT-Creation-Date: 2026-11-15T10:30:58+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: glocalsaino-easy-login-by-magic-link\n"
@@ -40,190 +40,193 @@ msgid "https://glocalsaino.com/"
 msgstr ""
 
 #: includes/class-gselml-admin.php:45
-#: includes/class-gselml-admin.php:46
-#: includes/class-gselml-admin.php:123
+#: includes/class-gselml-admin.php:125
 msgid "Easy Login by Magic Link"
 msgstr ""
 
-#: includes/class-gselml-admin.php:62
+#: includes/class-gselml-admin.php:46
+msgid "Easy Login"
+msgstr ""
+
+#: includes/class-gselml-admin.php:64
 msgid "Settings"
 msgstr ""
 
-#: includes/class-gselml-admin.php:93
+#: includes/class-gselml-admin.php:95
 msgid "Copied"
 msgstr ""
 
-#: includes/class-gselml-admin.php:94
+#: includes/class-gselml-admin.php:96
 msgid "Revoke this link? It will stop working immediately."
 msgstr ""
 
-#: includes/class-gselml-admin.php:114
+#: includes/class-gselml-admin.php:116
 msgid "Magic link created. Copy it from the list below."
 msgstr ""
 
-#: includes/class-gselml-admin.php:115
+#: includes/class-gselml-admin.php:117
 msgid "Magic link revoked."
 msgstr ""
 
-#: includes/class-gselml-admin.php:116
+#: includes/class-gselml-admin.php:118
 msgid "The selected user does not exist."
 msgstr ""
 
-#: includes/class-gselml-admin.php:117
+#: includes/class-gselml-admin.php:119
 msgid "The redirect URL must point to this site."
 msgstr ""
 
-#: includes/class-gselml-admin.php:124
+#: includes/class-gselml-admin.php:126
 msgid "Create links that log a WordPress user in with one click, without a password. Each link holds a random 256-bit token; it never contains or reveals the user's credentials."
 msgstr ""
 
-#: includes/class-gselml-admin.php:131
+#: includes/class-gselml-admin.php:133
 msgid "Create a link"
 msgstr ""
 
-#: includes/class-gselml-admin.php:137
-#: includes/class-gselml-admin.php:204
+#: includes/class-gselml-admin.php:139
+#: includes/class-gselml-admin.php:206
 msgid "User"
 msgstr ""
 
-#: includes/class-gselml-admin.php:144
+#: includes/class-gselml-admin.php:146
 msgid "A link for an administrator gives full access to the dashboard: share it with care."
 msgstr ""
 
-#: includes/class-gselml-admin.php:148
+#: includes/class-gselml-admin.php:150
 msgid "Label (optional)"
 msgstr ""
 
-#: includes/class-gselml-admin.php:150
+#: includes/class-gselml-admin.php:152
 msgid "e.g. Support access, May"
 msgstr ""
 
-#: includes/class-gselml-admin.php:154
+#: includes/class-gselml-admin.php:156
 msgid "Redirect to (optional)"
 msgstr ""
 
-#: includes/class-gselml-admin.php:157
+#: includes/class-gselml-admin.php:159
 msgid "Page of this site the user lands on after logging in. Default: the home page."
 msgstr ""
 
-#: includes/class-gselml-admin.php:161
+#: includes/class-gselml-admin.php:163
 msgid "Expires after"
 msgstr ""
 
-#: includes/class-gselml-admin.php:164
+#: includes/class-gselml-admin.php:166
 msgid "1 hour"
 msgstr ""
 
-#: includes/class-gselml-admin.php:165
+#: includes/class-gselml-admin.php:167
 msgid "1 day"
 msgstr ""
 
-#: includes/class-gselml-admin.php:166
+#: includes/class-gselml-admin.php:168
 msgid "7 days"
 msgstr ""
 
-#: includes/class-gselml-admin.php:167
+#: includes/class-gselml-admin.php:169
 msgid "30 days"
 msgstr ""
 
-#: includes/class-gselml-admin.php:168
-#: includes/class-gselml-admin.php:230
+#: includes/class-gselml-admin.php:170
+#: includes/class-gselml-admin.php:232
 msgid "Never"
 msgstr ""
 
-#: includes/class-gselml-admin.php:173
+#: includes/class-gselml-admin.php:175
 msgid "Maximum uses"
 msgstr ""
 
-#: includes/class-gselml-admin.php:176
+#: includes/class-gselml-admin.php:178
 msgid "1 use"
 msgstr ""
 
-#: includes/class-gselml-admin.php:177
+#: includes/class-gselml-admin.php:179
 msgid "5 uses"
 msgstr ""
 
-#: includes/class-gselml-admin.php:178
+#: includes/class-gselml-admin.php:180
 msgid "10 uses"
 msgstr ""
 
-#: includes/class-gselml-admin.php:179
+#: includes/class-gselml-admin.php:181
 msgid "Unlimited"
 msgstr ""
 
-#: includes/class-gselml-admin.php:184
+#: includes/class-gselml-admin.php:186
 msgid "Login button page"
 msgstr ""
 
-#: includes/class-gselml-admin.php:188
+#: includes/class-gselml-admin.php:190
 msgid "Show a page with a \"Log in\" button before logging the user in (recommended)"
 msgstr ""
 
-#: includes/class-gselml-admin.php:190
+#: includes/class-gselml-admin.php:192
 msgid "Email security filters often open links automatically to scan them. With this page, only a real click on the button logs in and counts as a use. Untick it for a direct one-click login."
 msgstr ""
 
-#: includes/class-gselml-admin.php:194
+#: includes/class-gselml-admin.php:196
 msgid "Create magic link"
 msgstr ""
 
-#: includes/class-gselml-admin.php:200
+#: includes/class-gselml-admin.php:202
 msgid "Existing links"
 msgstr ""
 
-#: includes/class-gselml-admin.php:205
+#: includes/class-gselml-admin.php:207
 msgid "Label"
 msgstr ""
 
-#: includes/class-gselml-admin.php:206
+#: includes/class-gselml-admin.php:208
 msgid "Link"
 msgstr ""
 
-#: includes/class-gselml-admin.php:207
+#: includes/class-gselml-admin.php:209
 msgid "Expires"
 msgstr ""
 
-#: includes/class-gselml-admin.php:208
+#: includes/class-gselml-admin.php:210
 msgid "Uses"
 msgstr ""
 
-#: includes/class-gselml-admin.php:209
+#: includes/class-gselml-admin.php:211
 msgid "Login"
 msgstr ""
 
-#: includes/class-gselml-admin.php:210
+#: includes/class-gselml-admin.php:212
 msgid "Status"
 msgstr ""
 
-#: includes/class-gselml-admin.php:211
+#: includes/class-gselml-admin.php:213
 msgid "Actions"
 msgstr ""
 
-#: includes/class-gselml-admin.php:228
+#: includes/class-gselml-admin.php:230
 msgid "Copy"
 msgstr ""
 
-#: includes/class-gselml-admin.php:232
+#: includes/class-gselml-admin.php:234
 msgid "Button page"
 msgstr ""
 
-#: includes/class-gselml-admin.php:232
+#: includes/class-gselml-admin.php:234
 msgid "Direct"
 msgstr ""
 
-#: includes/class-gselml-admin.php:235
+#: includes/class-gselml-admin.php:237
 msgid "Expired"
 msgstr ""
 
-#: includes/class-gselml-admin.php:237
+#: includes/class-gselml-admin.php:239
 msgid "Used up"
 msgstr ""
 
-#: includes/class-gselml-admin.php:239
+#: includes/class-gselml-admin.php:241
 msgid "Active"
 msgstr ""
 
-#: includes/class-gselml-admin.php:247
+#: includes/class-gselml-admin.php:249
 msgid "Revoke"
 msgstr ""
 
