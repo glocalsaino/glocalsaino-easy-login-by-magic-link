@@ -76,6 +76,7 @@ class GSELML_Core {
 		wp_set_current_user( $user->ID );
 		wp_set_auth_cookie( $user->ID, false, is_ssl() );
 		/** This action is documented in wp-includes/user.php */
+		// phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound -- Core hook, fired as wp_signon() does so other plugins see a normal login.
 		do_action( 'wp_login', $user->user_login, $user );
 
 		/**
@@ -84,7 +85,7 @@ class GSELML_Core {
 		 * @param WP_User $user Logged-in user.
 		 * @param array   $link Link data (user_id, label, redirect_to, created, expires, max_uses, uses).
 		 */
-		do_action( 'glocalsaino_magic_link_logged_in', $user, $link );
+		do_action( 'gselml_logged_in', $user, $link );
 
 		$redirect_to = ! empty( $link['redirect_to'] ) ? $link['redirect_to'] : home_url( '/' );
 

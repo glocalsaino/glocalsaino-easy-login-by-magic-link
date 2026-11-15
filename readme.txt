@@ -33,7 +33,7 @@ Each link carries a random 256-bit token. It never contains or sends the user's 
 * **Copy to clipboard** in one click.
 * **Status at a glance** – active, expired or used up, with a use counter.
 * **No external services, no extra database tables** – links are stored in a single WordPress option, removed when the plugin is deleted.
-* Developer hook `glocalsaino_magic_link_logged_in` fires after every magic-link login.
+* Developer hook `gselml_logged_in` fires after every magic-link login.
 
 Everything is free: there are no paid tiers, limits or license keys.
 
