@@ -84,6 +84,11 @@ There is no limit.
 
 All stored links are deleted together with the plugin.
 
+== Screenshots ==
+
+1. Easy Login page: choose the user, an optional label and landing page, the expiry, the maximum uses and the "Log in" button page.
+2. What the person sees after opening the link: one click on Log in and they are logged in.
+
 == Privacy ==
 
 This plugin does not send any data to third parties and makes no external connections.
