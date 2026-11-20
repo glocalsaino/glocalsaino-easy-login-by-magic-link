@@ -178,8 +178,8 @@ msgid "IP restriction"
 msgstr "Restricción por IP"
 
 #: includes/class-gselml-admin.php:227
-msgid "Any IP address"
-msgstr "Cualquier dirección IP"
+msgid "No restriction (any IP address)"
+msgstr "Sin restricción (cualquier IP)"
 
 #: includes/class-gselml-admin.php:228
 msgid "Lock to the IP address of the first login"
@@ -204,8 +204,8 @@ msgid "Device restriction"
 msgstr "Restricción por dispositivo"
 
 #: includes/class-gselml-admin.php:250
-msgid "Any device"
-msgstr "Cualquier dispositivo"
+msgid "No restriction (any device)"
+msgstr "Sin restricción (cualquier dispositivo)"
 
 #: includes/class-gselml-admin.php:251
 msgid "Lock to the browser of the first login"

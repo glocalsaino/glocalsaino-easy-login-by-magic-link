@@ -192,7 +192,7 @@ msgid "IP restriction"
 msgstr ""
 
 #: includes/class-gselml-admin.php:227
-msgid "Any IP address"
+msgid "No restriction (any IP address)"
 msgstr ""
 
 #: includes/class-gselml-admin.php:228
@@ -218,7 +218,7 @@ msgid "Device restriction"
 msgstr ""
 
 #: includes/class-gselml-admin.php:250
-msgid "Any device"
+msgid "No restriction (any device)"
 msgstr ""
 
 #: includes/class-gselml-admin.php:251

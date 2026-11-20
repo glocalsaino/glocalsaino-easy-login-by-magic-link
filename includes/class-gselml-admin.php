@@ -224,7 +224,7 @@ class GSELML_Admin {
 							<th scope="row"><label for="gselml_ip_mode"><?php esc_html_e( 'IP restriction', 'glocalsaino-easy-login-by-magic-link' ); ?></label></th>
 							<td>
 								<select id="gselml_ip_mode" name="ip_mode">
-									<option value="any" selected><?php esc_html_e( 'Any IP address', 'glocalsaino-easy-login-by-magic-link' ); ?></option>
+									<option value="any" selected><?php esc_html_e( 'No restriction (any IP address)', 'glocalsaino-easy-login-by-magic-link' ); ?></option>
 									<option value="first"><?php esc_html_e( 'Lock to the IP address of the first login', 'glocalsaino-easy-login-by-magic-link' ); ?></option>
 									<option value="list"><?php esc_html_e( 'Only these IP addresses…', 'glocalsaino-easy-login-by-magic-link' ); ?></option>
 								</select>
@@ -247,7 +247,7 @@ class GSELML_Admin {
 							<th scope="row"><label for="gselml_device_mode"><?php esc_html_e( 'Device restriction', 'glocalsaino-easy-login-by-magic-link' ); ?></label></th>
 							<td>
 								<select id="gselml_device_mode" name="device_mode">
-									<option value="any" selected><?php esc_html_e( 'Any device', 'glocalsaino-easy-login-by-magic-link' ); ?></option>
+									<option value="any" selected><?php esc_html_e( 'No restriction (any device)', 'glocalsaino-easy-login-by-magic-link' ); ?></option>
 									<option value="first"><?php esc_html_e( 'Lock to the browser of the first login', 'glocalsaino-easy-login-by-magic-link' ); ?></option>
 								</select>
 								<p class="description"><?php esc_html_e( 'With the lock, the first login stores a random identifier in that browser and the link keeps working only there. Useful for links with several uses: if the link leaks, it is useless on any other device.', 'glocalsaino-easy-login-by-magic-link' ); ?></p>
