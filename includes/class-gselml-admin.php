@@ -38,6 +38,22 @@ class GSELML_Admin {
 	}
 
 	/**
+	 * Settings screen, for loading the shared assets there too.
+	 *
+	 * @var GSELML_Settings|null
+	 */
+	private $settings;
+
+	/**
+	 * Sets the settings screen.
+	 *
+	 * @param GSELML_Settings $settings Settings screen.
+	 */
+	public function set_settings( GSELML_Settings $settings ) {
+		$this->settings = $settings;
+	}
+
+	/**
 	 * Registers the top-level admin menu.
 	 */
 	public function register_menu() {
@@ -49,6 +65,15 @@ class GSELML_Admin {
 			array( $this, 'render_page' ),
 			'dashicons-admin-network',
 			71
+		);
+		// Same slug as the parent: renames the first submenu entry.
+		add_submenu_page(
+			GSELML_Core::PAGE_SLUG,
+			__( 'Easy Login by Magic Link', 'glocalsaino-easy-login-by-magic-link' ),
+			__( 'Magic links', 'glocalsaino-easy-login-by-magic-link' ),
+			'manage_options',
+			GSELML_Core::PAGE_SLUG,
+			array( $this, 'render_page' )
 		);
 	}
 
@@ -72,7 +97,8 @@ class GSELML_Admin {
 	 * @param string $hook Current admin page hook suffix.
 	 */
 	public function enqueue_assets( $hook ) {
-		if ( '' === $this->hook || $hook !== $this->hook ) {
+		$hooks = array_filter( array( $this->hook, $this->settings ? $this->settings->hook() : '' ) );
+		if ( ! in_array( $hook, $hooks, true ) ) {
 			return;
 		}
 		wp_enqueue_style(
@@ -117,6 +143,7 @@ class GSELML_Admin {
 			'revoked'      => array( 'success', __( 'Magic link revoked.', 'glocalsaino-easy-login-by-magic-link' ) ),
 			'no_user'      => array( 'error', __( 'The selected user does not exist.', 'glocalsaino-easy-login-by-magic-link' ) ),
 			'bad_redirect' => array( 'error', __( 'The redirect URL must point to this site.', 'glocalsaino-easy-login-by-magic-link' ) ),
+			'bad_ip'       => array( 'error', __( 'Enter at least one valid IP address or range (for example 203.0.113.7 or 203.0.113.0/24).', 'glocalsaino-easy-login-by-magic-link' ) ),
 		);
 
 		$date_format = get_option( 'date_format' ) . ' ' . get_option( 'time_format' );
@@ -163,6 +190,7 @@ class GSELML_Admin {
 							<th scope="row"><label for="gselml_expires"><?php esc_html_e( 'Expires after', 'glocalsaino-easy-login-by-magic-link' ); ?></label></th>
 							<td>
 								<select id="gselml_expires" name="expires_in">
+									<option value="900"><?php esc_html_e( '15 minutes', 'glocalsaino-easy-login-by-magic-link' ); ?></option>
 									<option value="3600"><?php esc_html_e( '1 hour', 'glocalsaino-easy-login-by-magic-link' ); ?></option>
 									<option value="86400" selected><?php esc_html_e( '1 day', 'glocalsaino-easy-login-by-magic-link' ); ?></option>
 									<option value="604800"><?php esc_html_e( '7 days', 'glocalsaino-easy-login-by-magic-link' ); ?></option>
@@ -192,6 +220,39 @@ class GSELML_Admin {
 								<p class="description"><?php esc_html_e( 'Email security filters often open links automatically to scan them. With this page, only a real click on the button logs in and counts as a use. Untick it for a direct one-click login.', 'glocalsaino-easy-login-by-magic-link' ); ?></p>
 							</td>
 						</tr>
+						<tr>
+							<th scope="row"><label for="gselml_ip_mode"><?php esc_html_e( 'IP restriction', 'glocalsaino-easy-login-by-magic-link' ); ?></label></th>
+							<td>
+								<select id="gselml_ip_mode" name="ip_mode">
+									<option value="any" selected><?php esc_html_e( 'Any IP address', 'glocalsaino-easy-login-by-magic-link' ); ?></option>
+									<option value="first"><?php esc_html_e( 'Lock to the IP address of the first login', 'glocalsaino-easy-login-by-magic-link' ); ?></option>
+									<option value="list"><?php esc_html_e( 'Only these IP addresses…', 'glocalsaino-easy-login-by-magic-link' ); ?></option>
+								</select>
+								<p class="gselml-ip-list">
+									<label for="gselml_ips" class="screen-reader-text"><?php esc_html_e( 'Allowed IP addresses', 'glocalsaino-easy-login-by-magic-link' ); ?></label>
+									<textarea id="gselml_ips" name="ips" rows="3" class="regular-text code" placeholder="203.0.113.7&#10;198.51.100.0/24"></textarea>
+								</p>
+								<p class="description">
+									<?php
+									printf(
+										/* translators: %s: the administrator's current IP address. */
+										esc_html__( 'One IP address or CIDR range per line. Your current IP address is %s.', 'glocalsaino-easy-login-by-magic-link' ),
+										'<code>' . esc_html( $this->core->client_ip() ) . '</code>'
+									);
+									?>
+								</p>
+							</td>
+						</tr>
+						<tr>
+							<th scope="row"><label for="gselml_device_mode"><?php esc_html_e( 'Device restriction', 'glocalsaino-easy-login-by-magic-link' ); ?></label></th>
+							<td>
+								<select id="gselml_device_mode" name="device_mode">
+									<option value="any" selected><?php esc_html_e( 'Any device', 'glocalsaino-easy-login-by-magic-link' ); ?></option>
+									<option value="first"><?php esc_html_e( 'Lock to the browser of the first login', 'glocalsaino-easy-login-by-magic-link' ); ?></option>
+								</select>
+								<p class="description"><?php esc_html_e( 'With the lock, the first login stores a random identifier in that browser and the link keeps working only there. Useful for links with several uses: if the link leaks, it is useless on any other device.', 'glocalsaino-easy-login-by-magic-link' ); ?></p>
+							</td>
+						</tr>
 					</table>
 					<?php submit_button( __( 'Create magic link', 'glocalsaino-easy-login-by-magic-link' ) ); ?>
 				</form>
@@ -209,6 +270,7 @@ class GSELML_Admin {
 								<th><?php esc_html_e( 'Expires', 'glocalsaino-easy-login-by-magic-link' ); ?></th>
 								<th><?php esc_html_e( 'Uses', 'glocalsaino-easy-login-by-magic-link' ); ?></th>
 								<th><?php esc_html_e( 'Login', 'glocalsaino-easy-login-by-magic-link' ); ?></th>
+								<th><?php esc_html_e( 'Restrictions', 'glocalsaino-easy-login-by-magic-link' ); ?></th>
 								<th><?php esc_html_e( 'Status', 'glocalsaino-easy-login-by-magic-link' ); ?></th>
 								<th><?php esc_html_e( 'Actions', 'glocalsaino-easy-login-by-magic-link' ); ?></th>
 							</tr>
@@ -216,6 +278,7 @@ class GSELML_Admin {
 						<tbody>
 							<?php
 							foreach ( $links as $gselml_token => $gselml_link ) :
+								$gselml_link  = $this->core->normalize_link( $gselml_link );
 								$gselml_user  = get_user_by( 'id', (int) $gselml_link['user_id'] );
 								$gselml_who   = $gselml_user ? $gselml_user->display_name . ' (' . $gselml_user->user_email . ')' : '#' . (int) $gselml_link['user_id'];
 								$gselml_url   = $this->core->get_link_url( (string) $gselml_token );
@@ -232,6 +295,7 @@ class GSELML_Admin {
 									<td><?php echo ! empty( $gselml_link['expires'] ) ? esc_html( wp_date( $date_format, (int) $gselml_link['expires'] ) ) : esc_html__( 'Never', 'glocalsaino-easy-login-by-magic-link' ); ?></td>
 									<td><?php echo esc_html( $gselml_uses ); ?></td>
 									<td><?php echo $this->core->needs_confirmation( $gselml_link ) ? esc_html__( 'Button page', 'glocalsaino-easy-login-by-magic-link' ) : esc_html__( 'Direct', 'glocalsaino-easy-login-by-magic-link' ); ?></td>
+									<td><?php echo esc_html( implode( ' · ', $this->describe_restrictions( $gselml_link ) ) ); ?></td>
 									<td>
 										<?php if ( $this->core->is_expired( $gselml_link ) ) : ?>
 											<span class="gselml-status gselml-status--expired"><?php esc_html_e( 'Expired', 'glocalsaino-easy-login-by-magic-link' ); ?></span>
@@ -257,5 +321,35 @@ class GSELML_Admin {
 			<?php endif; ?>
 		</div>
 		<?php
+	}
+
+	/**
+	 * Short descriptions of a link's IP and device restrictions.
+	 *
+	 * @param array $link Normalized link.
+	 * @return string[]
+	 */
+	private function describe_restrictions( array $link ) {
+		$out = array();
+
+		if ( 'list' === $link['ip_mode'] ) {
+			/* translators: %s: list of IP addresses. */
+			$out[] = sprintf( __( 'IP: %s', 'glocalsaino-easy-login-by-magic-link' ), implode( ', ', (array) $link['ips'] ) );
+		} elseif ( 'first' === $link['ip_mode'] ) {
+			$out[] = '' !== $link['bound_ip']
+				/* translators: %s: IP address. */
+				? sprintf( __( 'IP locked to %s', 'glocalsaino-easy-login-by-magic-link' ), $link['bound_ip'] )
+				: __( 'IP of first login', 'glocalsaino-easy-login-by-magic-link' );
+		}
+
+		if ( 'requester' === $link['device_mode'] ) {
+			$out[] = __( 'Requesting browser only', 'glocalsaino-easy-login-by-magic-link' );
+		} elseif ( 'first' === $link['device_mode'] ) {
+			$out[] = '' !== $link['device_hash']
+				? __( 'Locked to one browser', 'glocalsaino-easy-login-by-magic-link' )
+				: __( 'Browser of first login', 'glocalsaino-easy-login-by-magic-link' );
+		}
+
+		return $out ? $out : array( '—' );
 	}
 }

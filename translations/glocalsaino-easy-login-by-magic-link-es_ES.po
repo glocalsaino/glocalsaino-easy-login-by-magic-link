@@ -1,6 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: GlocalSaino Easy Login by Magic Link 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/glocalsaino-easy-login-by-magic-link\n"
+"POT-Creation-Date: 2026-11-20T07:17:09+00:00\n"
 "Language: es_ES\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -20,8 +22,8 @@ msgstr "https://glocalsaino.com/easyloginbymagiclink/"
 
 #. Description of the plugin
 #: glocalsaino-easy-login-by-magic-link.php
-msgid "Create secure magic links that log a WordPress user in with one click, no password needed. Set expiry, maximum uses and a redirect URL for each link."
-msgstr "Crea enlaces mágicos seguros que inician sesión en WordPress como un usuario con un solo clic, sin contraseña. Configura caducidad, usos máximos y URL de destino por enlace."
+msgid "Passwordless login links that only work where they should: lock them to an IP address or a browser, let users request them by email or at registration, and send each role to its own page."
+msgstr "Enlaces de acceso sin contraseña que solo funcionan donde deben: limítalos a una IP o a un navegador, deja que los usuarios los pidan por email o al registrarse y envía cada rol a su propia página."
 
 #. Author of the plugin
 #: glocalsaino-easy-login-by-magic-link.php
@@ -33,220 +35,512 @@ msgstr "Glocal Saino"
 msgid "https://glocalsaino.com/"
 msgstr "https://glocalsaino.com/"
 
-#: includes/class-gselml-admin.php:45
-#: includes/class-gselml-admin.php:125
+#: includes/class-gselml-admin.php:61 includes/class-gselml-admin.php:72
+#: includes/class-gselml-admin.php:152
 msgid "Easy Login by Magic Link"
 msgstr "Acceso fácil con enlace mágico"
 
-#: includes/class-gselml-admin.php:46
+#: includes/class-gselml-admin.php:62
 msgid "Easy Login"
 msgstr "Acceso fácil"
 
-#: includes/class-gselml-admin.php:64
+#: includes/class-gselml-admin.php:73
+msgid "Magic links"
+msgstr "Enlaces mágicos"
+
+#: includes/class-gselml-admin.php:89 includes/class-gselml-settings.php:86
 msgid "Settings"
 msgstr "Ajustes"
 
-#: includes/class-gselml-admin.php:95
+#: includes/class-gselml-admin.php:121
 msgid "Copied"
 msgstr "Copiado"
 
-#: includes/class-gselml-admin.php:96
+#: includes/class-gselml-admin.php:122
 msgid "Revoke this link? It will stop working immediately."
 msgstr "¿Revocar este enlace? Dejará de funcionar inmediatamente."
 
-#: includes/class-gselml-admin.php:116
+#: includes/class-gselml-admin.php:142
 msgid "Magic link created. Copy it from the list below."
 msgstr "Enlace mágico creado. Cópialo de la lista inferior."
 
-#: includes/class-gselml-admin.php:117
+#: includes/class-gselml-admin.php:143
 msgid "Magic link revoked."
 msgstr "Enlace mágico revocado."
 
-#: includes/class-gselml-admin.php:118
+#: includes/class-gselml-admin.php:144
 msgid "The selected user does not exist."
 msgstr "El usuario seleccionado no existe."
 
-#: includes/class-gselml-admin.php:119
+#: includes/class-gselml-admin.php:145
 msgid "The redirect URL must point to this site."
 msgstr "La URL de redirección debe apuntar a este sitio."
 
-#: includes/class-gselml-admin.php:126
+#: includes/class-gselml-admin.php:146
+msgid "Enter at least one valid IP address or range (for example 203.0.113.7 or 203.0.113.0/24)."
+msgstr "Introduce al menos una dirección IP o un rango válido (por ejemplo 203.0.113.7 o 203.0.113.0/24)."
+
+#: includes/class-gselml-admin.php:153
 msgid "Create links that log a WordPress user in with one click, without a password. Each link holds a random 256-bit token; it never contains or reveals the user's credentials."
 msgstr "Crea enlaces que inician sesión en WordPress como un usuario con un solo clic, sin contraseña. Cada enlace lleva un token aleatorio de 256 bits; nunca contiene ni revela las credenciales del usuario."
 
-#: includes/class-gselml-admin.php:133
+#: includes/class-gselml-admin.php:160
 msgid "Create a link"
 msgstr "Crear enlace"
 
-#: includes/class-gselml-admin.php:139
-#: includes/class-gselml-admin.php:206
+#: includes/class-gselml-admin.php:166 includes/class-gselml-admin.php:267
 msgid "User"
 msgstr "Usuario"
 
-#: includes/class-gselml-admin.php:146
+#: includes/class-gselml-admin.php:173
 msgid "A link for an administrator gives full access to the dashboard: share it with care."
 msgstr "Un enlace para un administrador da acceso completo al escritorio: compártelo con cuidado."
 
-#: includes/class-gselml-admin.php:150
+#: includes/class-gselml-admin.php:177
 msgid "Label (optional)"
 msgstr "Etiqueta (opcional)"
 
-#: includes/class-gselml-admin.php:152
+#: includes/class-gselml-admin.php:179
 msgid "e.g. Support access, May"
 msgstr "Ej. Acceso soporte mayo"
 
-#: includes/class-gselml-admin.php:156
+#: includes/class-gselml-admin.php:183
 msgid "Redirect to (optional)"
 msgstr "Redirigir a (opcional)"
 
-#: includes/class-gselml-admin.php:159
+#: includes/class-gselml-admin.php:186
 msgid "Page of this site the user lands on after logging in. Default: the home page."
 msgstr "Página de este sitio a la que llega el usuario tras iniciar sesión. Por defecto: la portada."
 
-#: includes/class-gselml-admin.php:163
+#: includes/class-gselml-admin.php:190
 msgid "Expires after"
 msgstr "Caducidad"
 
-#: includes/class-gselml-admin.php:166
+#: includes/class-gselml-admin.php:193 includes/class-gselml-core.php:525
+msgid "15 minutes"
+msgstr "15 minutos"
+
+#: includes/class-gselml-admin.php:194 includes/class-gselml-core.php:526
 msgid "1 hour"
 msgstr "1 hora"
 
-#: includes/class-gselml-admin.php:167
+#: includes/class-gselml-admin.php:195 includes/class-gselml-core.php:527
 msgid "1 day"
 msgstr "1 día"
 
-#: includes/class-gselml-admin.php:168
+#: includes/class-gselml-admin.php:196 includes/class-gselml-core.php:528
 msgid "7 days"
 msgstr "7 días"
 
-#: includes/class-gselml-admin.php:169
+#: includes/class-gselml-admin.php:197 includes/class-gselml-core.php:529
 msgid "30 days"
 msgstr "30 días"
 
-#: includes/class-gselml-admin.php:170
-#: includes/class-gselml-admin.php:232
+#: includes/class-gselml-admin.php:198 includes/class-gselml-admin.php:295
+#: includes/class-gselml-core.php:530
 msgid "Never"
 msgstr "Nunca"
 
-#: includes/class-gselml-admin.php:175
+#: includes/class-gselml-admin.php:203
 msgid "Maximum uses"
 msgstr "Usos máximos"
 
-#: includes/class-gselml-admin.php:178
+#: includes/class-gselml-admin.php:206
 msgid "1 use"
 msgstr "1 uso"
 
-#: includes/class-gselml-admin.php:179
+#: includes/class-gselml-admin.php:207
 msgid "5 uses"
 msgstr "5 usos"
 
-#: includes/class-gselml-admin.php:180
+#: includes/class-gselml-admin.php:208
 msgid "10 uses"
 msgstr "10 usos"
 
-#: includes/class-gselml-admin.php:181
+#: includes/class-gselml-admin.php:209
 msgid "Unlimited"
 msgstr "Ilimitado"
 
-#: includes/class-gselml-admin.php:186
+#: includes/class-gselml-admin.php:214 includes/class-gselml-settings.php:254
 msgid "Login button page"
 msgstr "Página con botón de acceso"
 
-#: includes/class-gselml-admin.php:190
+#: includes/class-gselml-admin.php:218
 msgid "Show a page with a \"Log in\" button before logging the user in (recommended)"
 msgstr "Mostrar una página con un botón «Iniciar sesión» antes de iniciar la sesión (recomendado)"
 
-#: includes/class-gselml-admin.php:192
+#: includes/class-gselml-admin.php:220
 msgid "Email security filters often open links automatically to scan them. With this page, only a real click on the button logs in and counts as a use. Untick it for a direct one-click login."
 msgstr "Los filtros de seguridad del correo suelen abrir los enlaces automáticamente para analizarlos. Con esta página, solo un clic real en el botón inicia la sesión y cuenta como uso. Desmárcalo para un acceso directo en un clic."
 
-#: includes/class-gselml-admin.php:196
+#: includes/class-gselml-admin.php:224
+msgid "IP restriction"
+msgstr "Restricción por IP"
+
+#: includes/class-gselml-admin.php:227
+msgid "Any IP address"
+msgstr "Cualquier dirección IP"
+
+#: includes/class-gselml-admin.php:228
+msgid "Lock to the IP address of the first login"
+msgstr "Fijar a la IP del primer acceso"
+
+#: includes/class-gselml-admin.php:229
+msgid "Only these IP addresses…"
+msgstr "Solo estas direcciones IP…"
+
+#: includes/class-gselml-admin.php:232
+msgid "Allowed IP addresses"
+msgstr "Direcciones IP permitidas"
+
+#. translators: %s: the administrator's current IP address.
+#: includes/class-gselml-admin.php:239
+#, php-format
+msgid "One IP address or CIDR range per line. Your current IP address is %s."
+msgstr "Una dirección IP o rango CIDR por línea. Tu dirección IP actual es %s."
+
+#: includes/class-gselml-admin.php:247
+msgid "Device restriction"
+msgstr "Restricción por dispositivo"
+
+#: includes/class-gselml-admin.php:250
+msgid "Any device"
+msgstr "Cualquier dispositivo"
+
+#: includes/class-gselml-admin.php:251
+msgid "Lock to the browser of the first login"
+msgstr "Fijar al navegador del primer acceso"
+
+#: includes/class-gselml-admin.php:253
+msgid "With the lock, the first login stores a random identifier in that browser and the link keeps working only there. Useful for links with several uses: if the link leaks, it is useless on any other device."
+msgstr "Con el bloqueo, el primer acceso guarda un identificador aleatorio en ese navegador y el enlace solo sigue funcionando ahí. Útil para enlaces de varios usos: si el enlace se filtra, no sirve en ningún otro dispositivo."
+
+#: includes/class-gselml-admin.php:257
 msgid "Create magic link"
 msgstr "Crear enlace mágico"
 
-#: includes/class-gselml-admin.php:202
+#: includes/class-gselml-admin.php:263
 msgid "Existing links"
 msgstr "Enlaces existentes"
 
-#: includes/class-gselml-admin.php:207
+#: includes/class-gselml-admin.php:268
 msgid "Label"
 msgstr "Etiqueta"
 
-#: includes/class-gselml-admin.php:208
+#: includes/class-gselml-admin.php:269
 msgid "Link"
 msgstr "Enlace"
 
-#: includes/class-gselml-admin.php:209
+#: includes/class-gselml-admin.php:270
 msgid "Expires"
 msgstr "Caduca"
 
-#: includes/class-gselml-admin.php:210
+#: includes/class-gselml-admin.php:271
 msgid "Uses"
 msgstr "Usos"
 
-#: includes/class-gselml-admin.php:211
+#: includes/class-gselml-admin.php:272
 msgid "Login"
 msgstr "Acceso"
 
-#: includes/class-gselml-admin.php:212
+#: includes/class-gselml-admin.php:273
+msgid "Restrictions"
+msgstr "Restricciones"
+
+#: includes/class-gselml-admin.php:274
 msgid "Status"
 msgstr "Estado"
 
-#: includes/class-gselml-admin.php:213
+#: includes/class-gselml-admin.php:275
 msgid "Actions"
 msgstr "Acciones"
 
-#: includes/class-gselml-admin.php:230
+#: includes/class-gselml-admin.php:293
 msgid "Copy"
 msgstr "Copiar"
 
-#: includes/class-gselml-admin.php:234
+#: includes/class-gselml-admin.php:297
 msgid "Button page"
 msgstr "Con botón"
 
-#: includes/class-gselml-admin.php:234
+#: includes/class-gselml-admin.php:297
 msgid "Direct"
 msgstr "Directo"
 
-#: includes/class-gselml-admin.php:237
+#: includes/class-gselml-admin.php:301
 msgid "Expired"
 msgstr "Caducado"
 
-#: includes/class-gselml-admin.php:239
+#: includes/class-gselml-admin.php:303
 msgid "Used up"
 msgstr "Agotado"
 
-#: includes/class-gselml-admin.php:241
+#: includes/class-gselml-admin.php:305
 msgid "Active"
 msgstr "Activo"
 
-#: includes/class-gselml-admin.php:249
+#: includes/class-gselml-admin.php:313
 msgid "Revoke"
 msgstr "Revocar"
 
-#: includes/class-gselml-core.php:184
+#. translators: %s: list of IP addresses.
+#: includes/class-gselml-admin.php:337
+#, php-format
+msgid "IP: %s"
+msgstr "IP: %s"
+
+#. translators: %s: IP address.
+#: includes/class-gselml-admin.php:341
+#, php-format
+msgid "IP locked to %s"
+msgstr "IP fijada a %s"
+
+#: includes/class-gselml-admin.php:342
+msgid "IP of first login"
+msgstr "IP del primer acceso"
+
+#: includes/class-gselml-admin.php:346
+msgid "Requesting browser only"
+msgstr "Solo el navegador que lo pidió"
+
+#: includes/class-gselml-admin.php:349
+msgid "Locked to one browser"
+msgstr "Fijado a un navegador"
+
+#: includes/class-gselml-admin.php:350
+msgid "Browser of first login"
+msgstr "Navegador del primer acceso"
+
+#: includes/class-gselml-core.php:586
 msgid "Log in"
 msgstr "Iniciar sesión"
 
 #. translators: %s: user display name.
-#: includes/class-gselml-core.php:189
+#: includes/class-gselml-core.php:591
 #, php-format
 msgid "Log in as %s by clicking the button below."
 msgstr "Inicia sesión como %s pulsando el botón de abajo."
 
-#: includes/class-gselml-core.php:205
+#: includes/class-gselml-core.php:607
 msgid "Login link not valid"
 msgstr "Enlace de acceso no válido"
 
-#: includes/class-gselml-core.php:208
-msgid "This login link has expired, has already been used or has been revoked. Ask the site administrator for a new one."
-msgstr "Este enlace de acceso ha caducado, ya se ha usado o ha sido revocado. Pide uno nuevo al administrador del sitio."
+#: includes/class-gselml-core.php:610
+msgid "This login link has expired, has already been used or has been revoked. Request a new one or ask the site administrator."
+msgstr "Este enlace de acceso ha caducado, ya se ha usado o se ha revocado. Pide uno nuevo o consulta al administrador del sitio."
 
-#: includes/class-gselml-core.php:209
+#: includes/class-gselml-core.php:611 includes/class-gselml-core.php:630
 msgid "Go to the login page"
 msgstr "Ir a la página de acceso"
 
-#: includes/class-gselml-core.php:219
-#: includes/class-gselml-core.php:272
+#: includes/class-gselml-core.php:622
+msgid "Login link not valid here"
+msgstr "Enlace de acceso no válido aquí"
+
+#: includes/class-gselml-core.php:625
+msgid "This login link is restricted to certain internet connections (IP addresses), and it cannot be used from the one you are using now."
+msgstr "Este enlace de acceso está limitado a ciertas conexiones a internet (direcciones IP) y no se puede usar desde la que estás usando ahora."
+
+#: includes/class-gselml-core.php:626
+msgid "This login link only works in the browser where it was requested or first used. Open it in that browser, or request a new link from this one."
+msgstr "Este enlace de acceso solo funciona en el navegador donde se pidió o se usó por primera vez. Ábrelo en ese navegador o pide un enlace nuevo desde este."
+
+#: includes/class-gselml-core.php:640 includes/class-gselml-core.php:709
 msgid "You are not allowed to do this."
 msgstr "No tienes permisos para realizar esta acción."
+
+#: includes/class-gselml-requests.php:80
+msgid "You are already logged in."
+msgstr "Ya has iniciado sesión."
+
+#: includes/class-gselml-requests.php:87
+msgid "If an account exists for this email address, you will receive a link to log in shortly. Check your inbox and spam folder."
+msgstr "Si existe una cuenta con este email, en breve recibirás un enlace para iniciar sesión. Revisa tu bandeja de entrada y la carpeta de spam."
+
+#: includes/class-gselml-requests.php:88
+msgid "Too many requests. Please wait a while before trying again."
+msgstr "Demasiadas solicitudes. Espera un rato antes de volver a intentarlo."
+
+#: includes/class-gselml-requests.php:89
+msgid "Please enter a valid email address."
+msgstr "Introduce una dirección de email válida."
+
+#: includes/class-gselml-requests.php:90
+msgid "The form has expired. Please reload the page and try again."
+msgstr "El formulario ha caducado. Recarga la página y vuelve a intentarlo."
+
+#: includes/class-gselml-requests.php:104
+msgid "Email address"
+msgstr "Dirección de email"
+
+#: includes/class-gselml-requests.php:108
+msgid "Leave this field empty"
+msgstr "Deja este campo vacío"
+
+#: includes/class-gselml-requests.php:113
+msgid "Email me a login link"
+msgstr "Envíame un enlace de acceso"
+
+#: includes/class-gselml-requests.php:169
+msgid "Requested by email"
+msgstr "Solicitado por email"
+
+#. translators: %s: site title.
+#: includes/class-gselml-requests.php:234
+#, php-format
+msgid "[%s] Your login link"
+msgstr "[%s] Tu enlace de acceso"
+
+#. translators: %s: user display name.
+#: includes/class-gselml-requests.php:237
+#, php-format
+msgid "Hi %s,"
+msgstr "Hola, %s:"
+
+#. translators: %s: site title.
+#: includes/class-gselml-requests.php:239
+#, php-format
+msgid "Use this link to log in to %s:"
+msgstr "Usa este enlace para iniciar sesión en %s:"
+
+#. translators: %s: time span such as "15 minutes" or "1 day".
+#: includes/class-gselml-requests.php:242
+#: includes/class-gselml-requests.php:375
+#, php-format
+msgid "The link works once and expires in %s."
+msgstr "El enlace funciona una sola vez y caduca en %s."
+
+#: includes/class-gselml-requests.php:244
+msgid "Open it in the same browser where you requested it."
+msgstr "Ábrelo en el mismo navegador desde el que lo pediste."
+
+#: includes/class-gselml-requests.php:246
+msgid "If you did not ask for this link, you can safely ignore this email."
+msgstr "Si no has pedido este enlace, puedes ignorar este email."
+
+#: includes/class-gselml-requests.php:308
+msgid "Also email me a magic link to log in without a password"
+msgstr "Envíame también un enlace mágico para entrar sin contraseña"
+
+#: includes/class-gselml-requests.php:341
+msgid "Registration"
+msgstr "Registro"
+
+#: includes/class-gselml-requests.php:372
+msgid "Or log in right away, without a password, with this link:"
+msgstr "O entra ahora mismo, sin contraseña, con este enlace:"
+
+#: includes/class-gselml-requests.php:377
+msgid "Open it in the same browser where you registered."
+msgstr "Ábrelo en el mismo navegador desde el que te registraste."
+
+#: includes/class-gselml-settings.php:85 includes/class-gselml-settings.php:164
+msgid "Easy Login settings"
+msgstr "Ajustes de Acceso fácil"
+
+#. translators: %s: role name.
+#: includes/class-gselml-settings.php:141
+#, php-format
+msgid "The redirect for the role \"%s\" was ignored: it must point to this site."
+msgstr "Se ha ignorado la redirección del rol «%s»: debe apuntar a este sitio."
+
+#: includes/class-gselml-settings.php:171
+msgid "Login link request form"
+msgstr "Formulario de solicitud de enlace"
+
+#: includes/class-gselml-settings.php:173
+msgid "Add this shortcode to any page to show a form where users enter their email address and receive a login link:"
+msgstr "Añade este shortcode a cualquier página para mostrar un formulario en el que los usuarios escriben su email y reciben un enlace de acceso:"
+
+#. translators: %s: example shortcode with the redirect attribute.
+#: includes/class-gselml-settings.php:180
+#, php-format
+msgid "Optional: choose the landing page with %s. The answer is always the same, whether the address belongs to an account or not, so the form does not reveal who is registered."
+msgstr "Opcional: elige la página de destino con %s. La respuesta es siempre la misma, exista o no una cuenta con ese email, así que el formulario no revela quién está registrado."
+
+#: includes/class-gselml-settings.php:187
+#: includes/class-gselml-settings.php:243
+msgid "Link expires after"
+msgstr "El enlace caduca tras"
+
+#: includes/class-gselml-settings.php:190
+msgid "Links sent by email always work only once."
+msgstr "Los enlaces enviados por email funcionan siempre una sola vez."
+
+#: includes/class-gselml-settings.php:194
+msgid "Rate limits"
+msgstr "Límite de solicitudes"
+
+#. translators: %s: number input.
+#: includes/class-gselml-settings.php:200
+#, php-format
+msgid "At most %s requests per email address per hour"
+msgstr "Como máximo %s solicitudes por email y hora"
+
+#. translators: %s: number input.
+#: includes/class-gselml-settings.php:209
+#, php-format
+msgid "At most %s requests per IP address per hour"
+msgstr "Como máximo %s solicitudes por dirección IP y hora"
+
+#: includes/class-gselml-settings.php:220
+msgid "Registration form"
+msgstr "Formulario de registro"
+
+#. translators: %s: link to Settings → General.
+#: includes/class-gselml-settings.php:226
+#, php-format
+msgid "User registration is currently turned off in %s, so the checkbox will not be visible."
+msgstr "El registro de usuarios está desactivado en %s, así que la casilla no se verá."
+
+#: includes/class-gselml-settings.php:227
+msgid "Settings → General"
+msgstr "Ajustes → Generales"
+
+#: includes/class-gselml-settings.php:234
+msgid "Checkbox"
+msgstr "Casilla"
+
+#: includes/class-gselml-settings.php:238
+msgid "Add a checkbox to the WordPress registration form so new users can get a magic link in their welcome email"
+msgstr "Añadir una casilla al formulario de registro de WordPress para que los nuevos usuarios reciban un enlace mágico en su email de bienvenida"
+
+#: includes/class-gselml-settings.php:250
+msgid "Security of emailed links"
+msgstr "Seguridad de los enlaces enviados por email"
+
+#: includes/class-gselml-settings.php:251
+msgid "These options apply to links sent by the request form and by the registration checkbox."
+msgstr "Estas opciones se aplican a los enlaces enviados desde el formulario de solicitud y desde la casilla de registro."
+
+#: includes/class-gselml-settings.php:258
+msgid "Show a page with a \"Log in\" button so email scanners cannot use up the link (recommended)"
+msgstr "Mostrar una página con el botón «Iniciar sesión» para que los escáneres de correo no gasten el enlace (recomendado)"
+
+#: includes/class-gselml-settings.php:263
+msgid "Same-browser protection"
+msgstr "Protección de mismo navegador"
+
+#: includes/class-gselml-settings.php:267
+msgid "The link only works in the browser where it was requested"
+msgstr "El enlace solo funciona en el navegador desde el que se pidió"
+
+#: includes/class-gselml-settings.php:269
+msgid "A copied, forwarded or intercepted link is useless on any other device. Users must open the email on the same device and in the same browser; links opened inside an email app's own browser may not work."
+msgstr "Un enlace copiado, reenviado o interceptado no sirve en ningún otro dispositivo. Los usuarios deben abrir el email en el mismo dispositivo y el mismo navegador; los enlaces abiertos en el navegador interno de una app de correo pueden no funcionar."
+
+#: includes/class-gselml-settings.php:273
+msgid "Roles that cannot get links by email"
+msgstr "Roles que no pueden recibir enlaces por email"
+
+#: includes/class-gselml-settings.php:283
+msgid "Users with these roles get no email from the request form (the form still shows the usual message). Administrators can still create links for them manually."
+msgstr "Los usuarios con estos roles no reciben ningún email desde el formulario (que sigue mostrando el mensaje habitual). Los administradores pueden seguir creándoles enlaces a mano."
+
+#: includes/class-gselml-settings.php:290
+msgid "Redirect after login, by role"
+msgstr "Redirección tras el acceso, por rol"
+
+#: includes/class-gselml-settings.php:291
+msgid "Page each role lands on after logging in with a magic link. A page set on the link itself (or in the shortcode) takes priority. Empty: the home page."
+msgstr "Página a la que llega cada rol tras entrar con un enlace mágico. Tiene prioridad la página indicada en el propio enlace (o en el shortcode). Vacío: la página de inicio."

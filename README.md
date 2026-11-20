@@ -1,6 +1,6 @@
 # GlocalSaino Easy Login by Magic Link
 
-WordPress plugin: create magic links that log a user in with one click, without a password. Expiry, maximum uses and a redirect page per link.
+WordPress plugin: passwordless login links that only work where they should. IP and device (browser) restrictions, a scanner-proof login page, a request-by-email shortcode, a registration checkbox and redirects by role.
 
 - WordPress.org readme: [readme.txt](readme.txt)
 - Plugin page: https://glocalsaino.com/easyloginbymagiclink/
@@ -10,7 +10,7 @@ WordPress plugin: create magic links that log a user in with one click, without 
 Always build the distribution zip from git (honours `.gitattributes` export-ignore). Works from any folder:
 
 ```sh
-git -C ~/glocalsaino-easy-login-by-magic-link archive --format=zip --prefix=glocalsaino-easy-login-by-magic-link/ -o ~/Desktop/glocalsaino-easy-login-by-magic-link-1.0.0.zip HEAD
+git -C ~/proyectos/wordpress/glocalsaino-easy-login-by-magic-link archive --format=zip --prefix=glocalsaino-easy-login-by-magic-link/ -o ~/Desktop/glocalsaino-easy-login-by-magic-link-1.0.0.zip HEAD
 ```
 
 ## Translations

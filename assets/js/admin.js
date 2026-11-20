@@ -40,6 +40,17 @@
 		}
 	} );
 
+	// Show the IP list only when "Only these IP addresses" is selected.
+	var ipMode = document.getElementById( 'gselml_ip_mode' );
+	var ipList = document.querySelector( '.gselml-ip-list' );
+	if ( ipMode && ipList ) {
+		var toggleIpList = function () {
+			ipList.hidden = 'list' !== ipMode.value;
+		};
+		ipMode.addEventListener( 'change', toggleIpList );
+		toggleIpList();
+	}
+
 	document.addEventListener( 'submit', function ( event ) {
 		if ( event.target.classList.contains( 'gselml-revoke-form' ) && ! window.confirm( i18n.confirmRevoke ) ) {
 			event.preventDefault();
