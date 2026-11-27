@@ -2,13 +2,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GlocalSaino Easy Login by Magic Link 1.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/glocalsaino-easy-login-by-magic-link\n"
-"POT-Creation-Date: 2026-11-20T07:17:09+00:00\n"
+"POT-Creation-Date: 2026-11-27T09:09:46+00:00\n"
 "Language: es_ES\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Domain: glocalsaino-easy-login-by-magic-link\n"
+"Language-Team: Spanish (Spain)\n"
+"Last-Translator: Glocal Saino\n"
+"PO-Revision-Date: 2026-11-27 10:00+0100\n"
 
 #. Plugin Name of the plugin
 #: glocalsaino-easy-login-by-magic-link.php
@@ -23,7 +26,7 @@ msgstr "https://glocalsaino.com/easyloginbymagiclink/"
 #. Description of the plugin
 #: glocalsaino-easy-login-by-magic-link.php
 msgid "Passwordless login links that only work where they should: lock them to an IP address or a browser, let users request them by email or at registration, and send each role to its own page."
-msgstr "Enlaces de acceso sin contraseña que solo funcionan donde deben: limítalos a una IP o a un navegador, deja que los usuarios los pidan por email o al registrarse y envía cada rol a su propia página."
+msgstr "Enlaces de acceso sin contraseña que solo funcionan donde deben: limítalos a una IP o a un navegador, deja que los usuarios los pidan por correo electrónico o al registrarse y envía cada perfil a su propia página."
 
 #. Author of the plugin
 #: glocalsaino-easy-login-by-magic-link.php
@@ -355,7 +358,7 @@ msgstr "Ya has iniciado sesión."
 
 #: includes/class-gselml-requests.php:87
 msgid "If an account exists for this email address, you will receive a link to log in shortly. Check your inbox and spam folder."
-msgstr "Si existe una cuenta con este email, en breve recibirás un enlace para iniciar sesión. Revisa tu bandeja de entrada y la carpeta de spam."
+msgstr "Si existe una cuenta con este correo electrónico, en breve recibirás un enlace para iniciar sesión. Revisa tu bandeja de entrada y la carpeta de spam."
 
 #: includes/class-gselml-requests.php:88
 msgid "Too many requests. Please wait a while before trying again."
@@ -363,7 +366,7 @@ msgstr "Demasiadas solicitudes. Espera un rato antes de volver a intentarlo."
 
 #: includes/class-gselml-requests.php:89
 msgid "Please enter a valid email address."
-msgstr "Introduce una dirección de email válida."
+msgstr "Introduce una dirección de correo electrónico válida."
 
 #: includes/class-gselml-requests.php:90
 msgid "The form has expired. Please reload the page and try again."
@@ -371,7 +374,7 @@ msgstr "El formulario ha caducado. Recarga la página y vuelve a intentarlo."
 
 #: includes/class-gselml-requests.php:104
 msgid "Email address"
-msgstr "Dirección de email"
+msgstr "Dirección de correo electrónico"
 
 #: includes/class-gselml-requests.php:108
 msgid "Leave this field empty"
@@ -383,7 +386,7 @@ msgstr "Envíame un enlace de acceso"
 
 #: includes/class-gselml-requests.php:169
 msgid "Requested by email"
-msgstr "Solicitado por email"
+msgstr "Solicitado por correo electrónico"
 
 #. translators: %s: site title.
 #: includes/class-gselml-requests.php:234
@@ -416,7 +419,7 @@ msgstr "Ábrelo en el mismo navegador desde el que lo pediste."
 
 #: includes/class-gselml-requests.php:246
 msgid "If you did not ask for this link, you can safely ignore this email."
-msgstr "Si no has pedido este enlace, puedes ignorar este email."
+msgstr "Si no has pedido este enlace, puedes ignorar este correo electrónico."
 
 #: includes/class-gselml-requests.php:308
 msgid "Also email me a magic link to log in without a password"
@@ -450,13 +453,13 @@ msgstr "Formulario de solicitud de enlace"
 
 #: includes/class-gselml-settings.php:173
 msgid "Add this shortcode to any page to show a form where users enter their email address and receive a login link:"
-msgstr "Añade este shortcode a cualquier página para mostrar un formulario en el que los usuarios escriben su email y reciben un enlace de acceso:"
+msgstr "Añade este shortcode a cualquier página para mostrar un formulario en el que los usuarios escriben su correo electrónico y reciben un enlace de acceso:"
 
 #. translators: %s: example shortcode with the redirect attribute.
 #: includes/class-gselml-settings.php:180
 #, php-format
 msgid "Optional: choose the landing page with %s. The answer is always the same, whether the address belongs to an account or not, so the form does not reveal who is registered."
-msgstr "Opcional: elige la página de destino con %s. La respuesta es siempre la misma, exista o no una cuenta con ese email, así que el formulario no revela quién está registrado."
+msgstr "Opcional: elige la página de destino con %s. La respuesta es siempre la misma, exista o no una cuenta con ese correo electrónico, así que el formulario no revela quién está registrado."
 
 #: includes/class-gselml-settings.php:187
 #: includes/class-gselml-settings.php:243
@@ -465,7 +468,7 @@ msgstr "El enlace caduca tras"
 
 #: includes/class-gselml-settings.php:190
 msgid "Links sent by email always work only once."
-msgstr "Los enlaces enviados por email funcionan siempre una sola vez."
+msgstr "Los enlaces enviados por correo electrónico funcionan siempre una sola vez."
 
 #: includes/class-gselml-settings.php:194
 msgid "Rate limits"
@@ -475,7 +478,7 @@ msgstr "Límite de solicitudes"
 #: includes/class-gselml-settings.php:200
 #, php-format
 msgid "At most %s requests per email address per hour"
-msgstr "Como máximo %s solicitudes por email y hora"
+msgstr "Como máximo %s solicitudes por correo electrónico y hora"
 
 #. translators: %s: number input.
 #: includes/class-gselml-settings.php:209
@@ -503,11 +506,11 @@ msgstr "Casilla"
 
 #: includes/class-gselml-settings.php:238
 msgid "Add a checkbox to the WordPress registration form so new users can get a magic link in their welcome email"
-msgstr "Añadir una casilla al formulario de registro de WordPress para que los nuevos usuarios reciban un enlace mágico en su email de bienvenida"
+msgstr "Añadir una casilla al formulario de registro de WordPress para que los nuevos usuarios reciban un enlace mágico en su correo electrónico de bienvenida"
 
 #: includes/class-gselml-settings.php:250
 msgid "Security of emailed links"
-msgstr "Seguridad de los enlaces enviados por email"
+msgstr "Seguridad de los enlaces enviados por correo electrónico"
 
 #: includes/class-gselml-settings.php:251
 msgid "These options apply to links sent by the request form and by the registration checkbox."
@@ -527,15 +530,15 @@ msgstr "El enlace solo funciona en el navegador desde el que se pidió"
 
 #: includes/class-gselml-settings.php:269
 msgid "A copied, forwarded or intercepted link is useless on any other device. Users must open the email on the same device and in the same browser; links opened inside an email app's own browser may not work."
-msgstr "Un enlace copiado, reenviado o interceptado no sirve en ningún otro dispositivo. Los usuarios deben abrir el email en el mismo dispositivo y el mismo navegador; los enlaces abiertos en el navegador interno de una app de correo pueden no funcionar."
+msgstr "Un enlace copiado, reenviado o interceptado no sirve en ningún otro dispositivo. Los usuarios deben abrir el correo electrónico en el mismo dispositivo y el mismo navegador; los enlaces abiertos en el navegador interno de una app de correo pueden no funcionar."
 
 #: includes/class-gselml-settings.php:273
 msgid "Roles that cannot get links by email"
-msgstr "Roles que no pueden recibir enlaces por email"
+msgstr "Perfiles que no pueden recibir enlaces por correo electrónico"
 
 #: includes/class-gselml-settings.php:283
 msgid "Users with these roles get no email from the request form (the form still shows the usual message). Administrators can still create links for them manually."
-msgstr "Los usuarios con estos roles no reciben ningún email desde el formulario (que sigue mostrando el mensaje habitual). Los administradores pueden seguir creándoles enlaces a mano."
+msgstr "Los usuarios con estos perfiles no reciben ningún correo electrónico desde el formulario (que sigue mostrando el mensaje habitual). Los administradores pueden seguir creándoles enlaces a mano."
 
 #: includes/class-gselml-settings.php:290
 msgid "Redirect after login, by role"
